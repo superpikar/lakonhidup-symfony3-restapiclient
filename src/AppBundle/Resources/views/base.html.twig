@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}LakonHidup - Kumpulan Cerpen{% endblock %}</title>
+        {% block stylesheets %}{% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+        <link rel="stylesheet" href="{{ asset('bundles/app/css/style.css') }}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.2.3/css/bulma.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body>
+      <nav class="nav">
+        <div class="nav-left">
+          <a class="nav-item is-brand title" href="{{path('home')}}">
+            Lakon Hidup
+          </a>
+        </div>
+        <span class="nav-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+        <div class="nav-right nav-menu">
+
+        </div>
+      </nav>
+      <div class="main-content container">
+      {% block body %}{% endblock %}
+      </div>
+      <footer class="footer">
+        <div class="container">
+          <div class="content has-text-centered">
+            <p>
+              Developed by <a href="http://pikarlabs.com">@superpikar</a>. Theme by <a href="http://bulma.io/">Bulma</a>. The website content
+              is provided by <a href="http://lakonhidup.wordpress.com">http://lakonhidup.wordpress.com</a>.
+            </p>
+          </div>
+        </div>
+      </footer>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.2/lodash.min.js"></script>
+      <script type="text/javascript" src="{{ asset('bundles/app/js/script.js') }}"></script>
+      {% block javascripts %}{% endblock %}
+    </body>
+</html>

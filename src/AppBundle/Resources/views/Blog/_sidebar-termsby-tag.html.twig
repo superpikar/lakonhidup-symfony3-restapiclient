@@ -1,0 +1,12 @@
+<div class="menu">
+  <p class="menu-label">
+    MEDIA <small>(total: {{terms.found|number_format}})</small>
+  </p>
+  <ul class="menu-list">
+    {% for item in terms.tags %}
+    <li>
+      <a href="{{ path('posts-by-term', {'taxonomy': 'tag', 'term': item.slug}) }}">{{item.name}}</a>
+    </li>
+    {% endfor %}
+  </ul>
+</div>

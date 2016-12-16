@@ -1,0 +1,32 @@
+{% extends "AppBundle::base.html.twig" %}
+
+{% if type == 'tag' %}
+  {% set title = 'Media :' ~ term.name %}
+{% elseif type == 'category' %}
+  {% set title = 'Penulis :' ~ term.name  %}
+{% endif %}
+
+{% block title %}{{ title }} | {{ parent() }}{% endblock %}
+
+{% block body %}
+  <div class="columns">
+    <div class="column is-three-quarter">
+      <div class="welcome">
+        <h1 class="title is-1">{{ title }}</h1>
+      </div>
+      <div class="post-list" data-page="1">
+        {{ include('AppBundle:Blog:_post-list.html.twig', { 'posts': posts.posts, 'meta': posts.meta }) }}
+      </div>
+      {{ include('AppBundle:Blog:_button-loadmore.html.twig') }}
+    </div>
+    <div class="column is-one-quarter sidebar">
+      {{ include('AppBundle:Blog:_sidebar-termsby-' ~ type ~ '.html.twig', {'terms': terms}) }}
+    </div>
+  </div>
+{% endblock %}
+
+{% block javascripts %}
+  <script type="text/javascript">
+    initPage('{{path('home')}}', '{{type}}', '{{term.slug}}');
+  </script>
+{% endblock %}

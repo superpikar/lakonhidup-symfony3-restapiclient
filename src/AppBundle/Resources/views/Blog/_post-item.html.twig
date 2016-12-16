@@ -1,0 +1,28 @@
+<article class="media postitem">
+  <figure class="media-left postitem-thumbnail">
+    <div class="image is-{{thumbnailSize}}x{{thumbnailSize}}">
+      {% if post.thumbnailImage is not null %}
+      <img src="{{ post.thumbnailImage }}">
+      {% else %}
+      <img src="http://placehold.it/{{thumbnailSize}}/{{thumbnailSize}}">
+      {% endif %}
+    </div>
+  </figure>
+  <div class="media-content">
+    <div class="content">
+      <h3 class="title"><a href="{{ path('post', {'slug': post.slug}) }}">{{ post.title }}</a></h3>
+      <h5 class="subtitle">
+        <strong>{{ post.authorName }}</strong>,
+        {{post.mediaName}}
+        <i>({{ post.publishedDate }})</i>
+      </h5>
+      {% if showExcerpt %}
+      <div class="postitem-content">
+        {{ post.summary | raw }}
+        <a href="{{ path('post', {'slug': post.slug}) }}">baca selengkapnya</a>
+      </div>
+      {% endif %}
+    </div>
+    {{ include('AppBundle:Blog:_commentandlike.html.twig', { 'post': post }) }}
+  </div>
+</article>

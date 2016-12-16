@@ -1,0 +1,12 @@
+<div class="menu">
+  <p class="menu-label">
+    PENULIS <small>(total: {{terms.found|number_format}})</small>
+  </p>
+  <ul class="menu-list">
+    {% for item in terms.categories %}
+    <li>
+      <a href="{{ path('posts-by-term', {'taxonomy': 'category', 'term': item.slug}) }}">{{item.name}}</a>
+    </li>
+    {% endfor %}
+  </ul>
+</div>

@@ -1,0 +1,17 @@
+<article class="media">
+  <figure class="media-left">
+    <p class="image is-32x32">
+      <img src="{{comment.author.avatar_URL}}">
+    </p>
+  </figure>
+  <div class="media-content">
+    <div class="content">
+      <p>
+        <strong><a href="{{comment.author.URL}}">{{comment.author.name}}</a></strong>
+        <small>{{comment.date|date("d/M/Y")}}</small>
+        <br>
+        <blockquote>{{comment.content|raw}}</blockquote>
+      </p>
+    </div>
+  </div>
+</article>

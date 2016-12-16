@@ -1,0 +1,3 @@
+{% for post in posts %}
+{{ include('AppBundle:Blog:_post-item.html.twig', { 'post': post, 'thumbnailSize': 128, 'showExcerpt': true }) }}
+{% endfor %}

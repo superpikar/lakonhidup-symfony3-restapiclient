@@ -1,0 +1,41 @@
+nav{
+  padding: 20px;
+}
+.image{
+  overflow: hidden;
+}
+.main-content{
+  padding: 30px 20px;
+}
+.welcome{
+  margin: 0 0 40px;
+}
+.title+.subtitle{
+  margin-bottom: 0 !important;
+}
+.wp-caption{
+  margin: 0 auto;
+}
+.load-more{
+  margin: 20px 0;
+}
+.sidebar div:not(:first-child){
+  margin-top: 20px;
+}
+.postitem-content{
+  margin-top: 10px;
+}
+.post-content,
+.post-comments{
+  margin-top: 30px;
+}
+.footer{
+  background-color: #373535 !important;
+  padding: 40px 20px !important;
+}
+.footer .content{
+  color: white !important;
+}
+.footer a, .footer a:visited {
+  color: #dcda80;
+}

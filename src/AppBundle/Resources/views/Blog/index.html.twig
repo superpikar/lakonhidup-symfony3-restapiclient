@@ -1,0 +1,25 @@
+{% extends "AppBundle::base.html.twig" %}
+
+{% block body %}
+  <div class="welcome">
+    <h1 class="title is-1 has-text-centered">Selamat Datang di LakonHidup, Kumpulan Cerpen Koran Minggu.</h1>
+  </div>
+  <div class="columns">
+    <div class="column is-three-quarter">
+      <div class="post-list" data-page="1">
+        {{ include('AppBundle:Blog:_post-list.html.twig', { 'posts': posts.posts, 'meta': posts.meta }) }}
+      </div>
+      {{ include('AppBundle:Blog:_button-loadmore.html.twig') }}
+    </div>
+    <div class="column is-one-quarter sidebar">
+      {{ include('AppBundle:Blog:_sidebar-termsby-tag.html.twig', {'terms': tags}) }}
+      {{ include('AppBundle:Blog:_sidebar-termsby-category.html.twig', {'terms': categories}) }}
+    </div>
+  </div>
+{% endblock %}
+
+{% block javascripts %}
+  <script type="text/javascript">
+    initPage('{{path('home')}}');
+  </script>
+{% endblock %}
