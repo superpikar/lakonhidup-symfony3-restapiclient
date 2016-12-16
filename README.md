@@ -6,14 +6,14 @@ This is a sample Symfony3 RESTAPI client for [http://lakonhidup.wordpress.com](h
 
 Dependencies
 ------------
-[Unirest](http://unirest.io/php.html). Simplified, lightweight HTTP client library.
-[Bulma](https://bulma.io). Modern CSS framework based on Flexbox
-[jQuery](https://jquery.com).
-[lodash](http://lodash.com)
+- [Unirest](http://unirest.io/php.html). Simplified, lightweight HTTP client library.
+- [Bulma](https://bulma.io). Modern CSS framework based on Flexbox
+- [jQuery](https://jquery.com).
+- [lodash](http://lodash.com)
 
 Installation:
 ------------
-Please install vendor dependencies.
+Please install Symfony vendor dependencies.
 ```bash
 $ php composer install
 ```
